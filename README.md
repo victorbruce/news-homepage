@@ -1,6 +1,6 @@
 # Frontend Mentor - News homepage solution
 
-This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [News homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -14,7 +14,6 @@ This is a solution to the [News homepage challenge on Frontend Mentor](https://w
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -27,19 +26,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+!["result"](./screenshot/screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Github](https://github.com/victorbruce/news-homepage)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -47,63 +38,84 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS modules
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [TailwindCss](https://tailwindcss.com) - For styles
+- Vitest and React Testing Library - For writing component tests
+- Typescript - For type-checking
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- I learned how to use variable fonts for the first time.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("/fonts/Inter-VariableFont_slnt,wght.woff2") format("woff2-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
+html {
+  font-family: "Inter";
+  font-size: 15px;
 }
 ```
+
+- Also I revisited how to handle responsive images when given images of different resolution size for each screen device.
+
+```jsx
+<img
+  className="w-full h-full"
+  srcSet={`${ImageWeb3Mobile} 686w, ${ImageWeb3Desktop} 1460w`}
+  sizes="(max-width: 600px) 100vw, (max-width: 1440px) 900px"
+  src={ImageWeb3Mobile}
+  alt="hero banner"
+/>
+```
+
+- I also learned different ways of customizing tailwindcss to extend it's functionalities. For example, setting design system variables such as colors, text size, font-family etc.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+export deafult {
+  theme: {
+    extend: {
+      colors: {
+        softOrange: "var(--soft-orange)",
+        softRed: "var(--soft-red)",
+        offWhite: "var(--off-white)",
+        grayishBlue: "var(--grayish-blue)",
+        darkGrayishBlue: "var(--dark-grayish-blue)",
+        veryDarkBlue: "var(--very-dark-blue)"
+      },
+      textColor: {
+        softOrange: "var(--soft-orange)",
+        softRed: "var(--soft-red)",
+        offWhite: "var(--off-white)",
+        grayishBlue: "var(--grayish-blue)",
+        darkGrayishBlue: "var(--dark-grayish-blue)",
+        veryDarkBlue: "var(--very-dark-blue)"
+      },
+    },
+  },
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- Setting up tests using Vitest and React Testing Library to test individual components whiles applying type saftey using Typescript.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+In the future projects I will focus on applying motions and animations to components to improve the user experience.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Responsive Images Done Right](https://www.smashingmagazine.com/2014/05/responsive-images-done-right-guide-picture-srcset/) - This resource helped me understand how to properly use `srcset` and `sizes` attribute to achieve image responsiveness.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [CSS Variable Fonts](https://www.digitalocean.com/community/tutorials/css-variable-fonts) - This article helped me understand how to setup local variable fonts.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [victorbruce.vercel.app](https://victorbruce.vercel.app)
+- Frontend Mentor - [@victorbruce](https://www.frontendmentor.io/profile/victorbruce)
