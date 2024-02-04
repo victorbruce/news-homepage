@@ -1,0 +1,48 @@
+.navbar {
+  @apply flex justify-between items-center;
+}
+
+.navbar button {
+  @apply block lg:hidden;
+}
+
+.menu {
+  @apply hidden lg:flex gap-8 text-darkGrayishBlue;
+}
+
+.menu li {
+  transition: color 0.3s ease-in;
+}
+
+.menu li:hover {
+  @apply text-softOrange;
+  cursor: pointer;
+}
+
+.mobileMenu {
+  @apply lg:hidden;
+}
+
+.mobileMenuBg {
+  @apply bg-black bg-opacity-30 w-full absolute top-0 right-0 left-0 bottom-0 -z-10;
+}
+
+.mobileMenuContainer {
+  @apply fixed bg-white w-[70%] right-0 top-0 bottom-0 p-8 border-l-gray-100 border-l-2;
+}
+
+.mobileMenuHeader {
+  @apply flex justify-end;
+}
+
+.mobileMenuList {
+  @apply flex flex-col gap-6 mt-8;
+}
+
+.mobileMenuList li {
+  transition: color 0.3s ease-in;
+}
+
+.mobileMenuList li:hover {
+  @apply text-softOrange;
+}
