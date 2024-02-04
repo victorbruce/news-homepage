@@ -1,7 +1,11 @@
+import Hero from "./pages/Home/Hero";
+import Trending from "./pages/Home/Trending";
+
 function App() {
   return (
     <>
-      <p className="">Hello world!</p>
+      <Hero />
+      <Trending />
     </>
   );
 }
